@@ -13,6 +13,16 @@ import java.util.ArrayList;
 
 // @notifee/react-native
 import io.invertase.notifee.NotifeePackage;
+// react-native-gesture-handler
+import com.swmansion.gesturehandler.RNGestureHandlerPackage;
+// react-native-maps
+import com.airbnb.android.react.maps.MapsPackage;
+// react-native-navigation
+import com.reactnativenavigation.react.NavigationPackage;
+// react-native-safe-area-context
+import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
+// react-native-screens
+import com.swmansion.rnscreens.RNScreensPackage;
 
 public class PackageList {
   private Application application;
@@ -58,7 +68,12 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
-      new NotifeePackage()
+      new NotifeePackage(),
+      new RNGestureHandlerPackage(),
+      new MapsPackage(),
+      new NavigationPackage(reactNativeHost),
+      new SafeAreaContextPackage(),
+      new RNScreensPackage()
     ));
   }
 }
